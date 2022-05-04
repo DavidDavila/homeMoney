@@ -1,0 +1,138 @@
+<main>
+  <section>
+    <h1>Viabilidad de la casa</h1>
+    <article class="row">
+      <div class="form-group col-6">
+        <label for="exampleInputEmail1">Coste de la casa</label>
+        <input
+          #CosteCasa
+          value="378000"
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          placeholder="Valor Bruto"
+        />
+      </div>
+      <div class="form-group col-6">
+        <label for="exampleInputEmail1">Ahorro en el banco</label>
+        <input
+          #AhorroPrevio
+          value="15000"
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          placeholder="Ahorro en el banco"
+        />
+      </div>
+      <div class="form-group col-3">
+        <label for="exampleInputEmail1">Entrada</label>
+        <input
+          #Entrada
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          value="33000"
+          placeholder="Aportación como entrada"
+        />
+      </div>
+      <div class="form-group col-3">
+        <label for="exampleInputEmail1">Reserva </label>
+        <input
+          #Reserva
+          value="600"
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          placeholder="Aportación como reserva"
+        />
+      </div>
+      <div class="form-group col-3">
+        <label for="exampleInputEmail1">Ahorro M</label>
+        <input
+          #AhorroM
+          value="1750"
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          placeholder="Capacidad de ahorro mensual"
+        />
+      </div>
+      <div class="form-group col-3">
+        <label for="exampleInputEmail1">Ahorro PE</label>
+        <input
+          #AhorroPE
+          value="0"
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          placeholder="Capacidad de ahorro mensual"
+        />
+      </div>
+    </article>
+
+    <article class="row">
+      <div class="form-group col-4">
+        <label for="exampleInputEmail1">Mensualidad</label>
+        <input
+          #Mensualidad
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          value="1100"
+          placeholder="Numeros de mensualidades"
+        />
+      </div>
+      <div class="form-group col-3">
+        <label for="exampleInputEmail1">Cantidad</label>
+        <input
+          #CantidadMensualidad
+          value="30"
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          placeholder="Aportación como reserva"
+        />
+      </div>
+
+      <div class="form-group col-3">
+        <label for="exampleInputEmail1">Paga Extra</label>
+        <input
+          #PE
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          value="3432"
+          placeholder="Numeros de mensualidades"
+        />
+      </div>
+      <div class="form-group col-2">
+        <label for="exampleInputEmail1">Cantidad </label>
+        <input
+          #CantidadPE
+          value="5"
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          placeholder="Aportación como reserva"
+        />
+      </div>
+    </article>
+    <article class="row"></article>
+  </section>
+  <section>
+    <dl>
+      <dt>Valor de la vivienda con iva</dt>
+      <dd>{{ viviendaConIva }}</dd>
+      <dt>80% de hipoteca</dt>
+      <dd>{{ hipoteca80 }}</dd>
+      <dt>20% de aportado</dt>
+      <dd>{{ hipoteca20 }}</dd>
+      <dt>Real aportado aportado</dt>
+      <dd>{{ aportado }}</dd>
+      <dt>Iva de la hipoteca</dt>
+      <dd>{{ ivaHipoteca }}</dd>
+      <dt>Dinero necesario</dt>
+      <dd>{{ dineroNecesario }}</dd>
+    </dl>
+  </section>
+</main>
