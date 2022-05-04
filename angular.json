@@ -20,7 +20,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "https://daviddavila.github.io/homeMoney/",
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -33,6 +32,8 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "https://daviddavila.github.io/homeMoney/",
+
               "budgets": [
                 {
                   "type": "initial",

@@ -13,7 +13,7 @@ import {
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements AfterViewInit {
-  @HostListener('keyup', ['input'])
+  @HostListener('change', ['input'])
   onChange() {
     this.ngAfterViewInit();
   }
@@ -37,18 +37,20 @@ export class AppComponent implements AfterViewInit {
   constructor() {}
 
   ngAfterViewInit() {
-    this.viviendaConIva =
+    this.viviendaConIva = Math.round(
       Number(this.CosteCasa?.nativeElement.value) +
-      (Number(this.CosteCasa?.nativeElement.value) * 10) / 100;
-    this.hipoteca80 = (this.viviendaConIva * 80) / 100;
-    this.hipoteca20 = (this.viviendaConIva * 20) / 100;
-    this.aportado = this.getAportado();
-    this.ivaHipoteca = (this.hipoteca80 * 10) / 100;
-    this.dineroNecesario =
+        (Number(this.CosteCasa?.nativeElement.value) * 10) / 100
+    );
+    this.hipoteca80 = Math.round((this.viviendaConIva * 80) / 100);
+    this.hipoteca20 = Math.round((this.viviendaConIva * 20) / 100);
+    this.aportado = Math.round(this.getAportado());
+    this.ivaHipoteca = Math.round(this.hipoteca80 * 10) / 100;
+    this.dineroNecesario = Math.round(
       this.hipoteca20 +
-      this.ivaHipoteca -
-      this.aportado -
-      this.AhorroPrevio?.nativeElement.value;
+        this.ivaHipoteca -
+        this.aportado -
+        this.AhorroPrevio?.nativeElement.value
+    );
   }
   getAportado() {
     const entrada = Number(this.Entrada?.nativeElement.value),

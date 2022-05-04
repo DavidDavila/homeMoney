@@ -2,7 +2,7 @@
   <section>
     <h1>Viabilidad de la casa</h1>
     <article class="row">
-      <div class="form-group col-6">
+      <div class="form-group col-5">
         <label for="exampleInputEmail1">Coste de la casa</label>
         <input
           #CosteCasa
@@ -11,17 +11,6 @@
           class="form-control"
           id="exampleInputEmail1"
           placeholder="Valor Bruto"
-        />
-      </div>
-      <div class="form-group col-6">
-        <label for="exampleInputEmail1">Ahorro en el banco</label>
-        <input
-          #AhorroPrevio
-          value="15000"
-          type="number"
-          class="form-control"
-          id="exampleInputEmail1"
-          placeholder="Ahorro en el banco"
         />
       </div>
       <div class="form-group col-3">
@@ -46,8 +35,21 @@
           placeholder="Aportación como reserva"
         />
       </div>
+      <h2 class="col-12">Ahorros</h2>
+      <div class="form-group col-4">
+        <label for="exampleInputEmail1">En el banco</label>
+        <input
+          #AhorroPrevio
+          value="15000"
+          type="number"
+          class="form-control"
+          id="exampleInputEmail1"
+          placeholder="Ahorro en el banco"
+        />
+      </div>
+
       <div class="form-group col-3">
-        <label for="exampleInputEmail1">Ahorro M</label>
+        <label for="exampleInputEmail1">Mensual</label>
         <input
           #AhorroM
           value="1750"
@@ -57,8 +59,8 @@
           placeholder="Capacidad de ahorro mensual"
         />
       </div>
-      <div class="form-group col-3">
-        <label for="exampleInputEmail1">Ahorro PE</label>
+      <div class="form-group col-4">
+        <label for="exampleInputEmail1">Pagas Extras</label>
         <input
           #AhorroPE
           value="0"
@@ -71,8 +73,10 @@
     </article>
 
     <article class="row">
-      <div class="form-group col-4">
-        <label for="exampleInputEmail1">Mensualidad</label>
+      <h2 class="col-12">Pagos a cooperativa</h2>
+
+      <div class="form-group col-3">
+        <label for="exampleInputEmail1">Mensual</label>
         <input
           #Mensualidad
           type="number"
@@ -83,7 +87,7 @@
         />
       </div>
       <div class="form-group col-3">
-        <label for="exampleInputEmail1">Cantidad</label>
+        <label for="exampleInputEmail1">Veces</label>
         <input
           #CantidadMensualidad
           value="30"
@@ -106,7 +110,7 @@
         />
       </div>
       <div class="form-group col-2">
-        <label for="exampleInputEmail1">Cantidad </label>
+        <label for="exampleInputEmail1">Veces </label>
         <input
           #CantidadPE
           value="5"
