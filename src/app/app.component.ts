@@ -33,7 +33,8 @@ export class AppComponent implements AfterViewInit {
   hipoteca20?: number;
   aportado?: number;
   ivaHipoteca?: number;
-  dineroNecesario?: number;
+  totalCooperativa?: number;
+  dineroNecesario?: string;
   constructor() {}
 
   ngAfterViewInit() {
@@ -43,16 +44,16 @@ export class AppComponent implements AfterViewInit {
     );
     this.hipoteca80 = Math.round((this.viviendaConIva * 80) / 100);
     this.hipoteca20 = Math.round((this.viviendaConIva * 20) / 100);
-    this.aportado = Math.round(this.getAportado());
+
     this.ivaHipoteca = Math.round(this.hipoteca80 * 10) / 100;
-    this.dineroNecesario = Math.round(
-      this.hipoteca20 +
-        this.ivaHipoteca -
-        this.aportado -
-        this.AhorroPrevio?.nativeElement.value
-    );
+    this.totalCooperativa = Math.round(this.getTotalCooperativa());
+    this.aportado = Math.round(this.getAportado());
+    const money = this.hipoteca20 + this.ivaHipoteca - this.aportado;
+    this.dineroNecesario =
+      money < 0 ? `Sobran ${Math.abs(money)} €` : `Faltan ${Math.abs(money)} €`;
   }
-  getAportado() {
+
+  getTotalCooperativa() {
     const entrada = Number(this.Entrada?.nativeElement.value),
       reserva = Number(this.Reserva?.nativeElement.value),
       mensualidad = Number(this.Mensualidad?.nativeElement.value),
@@ -63,6 +64,24 @@ export class AppComponent implements AfterViewInit {
       cantidadPagasExtras = Number(this.CantidadPE?.nativeElement.value);
     return (
       entrada +
+      reserva +
+      mensualidad * cantidadMensualidad +
+      pagasExtras * cantidadPagasExtras
+    );
+  }
+  getAportado() {
+    const entrada = Number(this.Entrada?.nativeElement.value),
+      reserva = Number(this.Reserva?.nativeElement.value),
+      mensualidad = Number(this.AhorroM?.nativeElement.value),
+      cantidadMensualidad = Number(
+        this.CantidadMensualidad?.nativeElement.value
+      ),
+      pagasExtras = Number(this.AhorroPE?.nativeElement.value),
+      cantidadPagasExtras = Number(this.CantidadPE?.nativeElement.value),
+      ahorroPrevio = Number(this.AhorroPrevio?.nativeElement.value);
+    return (
+      entrada +
+      ahorroPrevio +
       reserva +
       mensualidad * cantidadMensualidad +
       pagasExtras * cantidadPagasExtras
