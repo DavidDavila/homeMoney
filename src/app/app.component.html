@@ -1,6 +1,6 @@
 <main>
   <section>
-    <h1>Viabilidad de la casa</h1>
+    <h5>Viabilidad de la casa</h5>
     <article class="row">
       <div class="form-group col-5">
         <label for="exampleInputEmail1">Coste de la casa</label>
@@ -35,7 +35,7 @@
           placeholder="Aportación como reserva"
         />
       </div>
-      <h2 class="col-12">Ahorros</h2>
+      <h5 class="col-12">Ahorros</h5>
       <div class="form-group col-4">
         <label for="exampleInputEmail1">En el banco</label>
         <input
@@ -73,7 +73,7 @@
     </article>
 
     <article class="row">
-      <h2 class="col-12">Pagos a cooperativa</h2>
+      <h5 class="col-12">Pagos a cooperativa</h5>
 
       <div class="form-group col-3">
         <label for="exampleInputEmail1">Mensual</label>
@@ -123,18 +123,31 @@
     </article>
     <article class="row"></article>
   </section>
-  <section style="display: flex; justify-content: center">
+  <section
+    style="display: flex; justify-content: space-between; flex-wrap: wrap"
+  >
     <dl>
       <dt>Valor de la vivienda con iva</dt>
       <dd>{{ viviendaConIva }}</dd>
-      <dt>80% de hipoteca</dt>
-      <dd>{{ hipoteca80 }}</dd>
-      <dt>20% de aportado</dt>
-      <dd>{{ hipoteca20 }}</dd>
-      <dt>Real aportado aportado</dt>
-      <dd>{{ aportado }}</dd>
+    </dl>
+    <dl>
       <dt>Iva de la hipoteca</dt>
       <dd>{{ ivaHipoteca }}</dd>
+    </dl>
+    <dl>
+      <dt>80% de hipoteca</dt>
+      <dd>{{ hipoteca80 }}</dd>
+    </dl>
+    <dl>
+      <dt>20% de aportado</dt>
+      <dd>{{ hipoteca20 }}</dd>
+    </dl>
+    <dl>
+      <dt>Real aportado aportado</dt>
+      <dd>{{ aportado }}</dd>
+    </dl>
+
+    <dl>
       <dt>Dinero necesario</dt>
       <dd>{{ dineroNecesario }}</dd>
     </dl>
